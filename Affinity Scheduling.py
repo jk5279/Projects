@@ -20,7 +20,6 @@ m = len(task_list[0]) - 1
 n = len(task_list)
 
 
-
 def get_machine_state_list(rj_list):
     machine_state_list = list()
     for a in range(0, m):
@@ -46,6 +45,7 @@ rj_list = list()
 for task_no, Ti in enumerate(Eij_list):
     rj_list.append([task_no, Ti.index(min(Ti)), Eij_list[task_no][Ti.index(min(Ti))]])
 
+
 machine_state_list = list()
 machine_state_list = get_machine_state_list(rj_list)
 
@@ -57,15 +57,43 @@ makespan_list = [makespan, makespan]
 makespan_machine_task_list = [item for item in rj_list if item[1] == makespan_machine_idx]
 makespan_machine_task_list = list(sorted(makespan_machine_task_list, key= lambda x:x[-1], reverse=True))
 
+temp_makespan_list = list()
+for m_idx in range(0,m):
+    rj_list[makespan_machine_task_list[0][0]][1] = m_idx
+    rj_list[makespan_machine_task_list[0][0]][2] = Eij_list[makespan_machine_task_list[0][1]][m_idx]
+    machine_state_list = get_machine_state_list(rj_list)
+    temp_makespan_list.append(max(machine_state_list))
+makespan_machine_idx = temp_makespan_list.index(min(temp_makespan_list))
+makespan = min(temp_makespan_list)
+rj_list[makespan_machine_task_list[0][0]][1] = makespan_machine_idx
+rj_list[makespan_machine_task_list[0][0]][2] = Eij_list[makespan_machine_task_list[0][0]][makespan_machine_idx]
+
+makespan_list.append(makespan)
+
+while makespan_list[-1] != makespan_list[-2] or makespan_list[-2] != makespan_list[-3]:
+    temp_makespan_list.clear()
+    for m_idx in range(0, m):
+        rj_list[makespan_machine_task_list[0][0]][1] = m_idx
+        rj_list[makespan_machine_task_list[0][0]][2] = Eij_list[makespan_machine_task_list[0][1]][m_idx]
+        machine_state_list = get_machine_state_list(rj_list)
+        temp_makespan_list.append(max(machine_state_list))
+    makespan_machine_idx = temp_makespan_list.index(min(temp_makespan_list))
+    makespan = min(temp_makespan_list)
+    rj_list[makespan_machine_task_list[0][0]][1] = makespan_machine_idx
+    rj_list[makespan_machine_task_list[0][0]][2] = Eij_list[makespan_machine_task_list[0][0]][makespan_machine_idx]
+
+    makespan_list.append(makespan)
+
 print("task_list:", task_list)
 print("m:", m, " n:", n)
 print("Eij_list:", Eij_list)
 print("rj_list:", rj_list)
 print("machine state list: ", machine_state_list)
-print("makespan: ", makespan)
+print("makespan:", makespan)
 print("makespan machine id:", makespan_machine_idx)
 print("makespan_list:", makespan_list)
 print("makespan_machine_task_list:",makespan_machine_task_list)
+
 
 def get_scheduler_list(rj_list, m):
     scheduler_list = list()
