@@ -3,8 +3,9 @@ import csv
 # file_path = "/content/drive/MyDrive/SchedulingPractice/5X10/5X10-2.csv"
 # file_path = "/content/drive/MyDrive/SchedulingPractice/maxmindatafile.csv"
 # file_path = "C:/Users/김종은/Desktop/스케쥴링/maxmindatafile.csv"
-file_path = "C:/Users/user/Desktop/종은/maxmindatafile.csv"
 # file_path = "C:/Users/user/Desktop/종은/dataset/dataset/m=10/n=400/400x10-5.csv"
+
+file_path = "C:/Users/user/Desktop/종은/maxmindatafile.csv"
 
 task_list = list()
 
