@@ -1,3 +1,5 @@
+# minmin + cca
+
 import csv
 
 # file_path = "/content/drive/MyDrive/SchedulingPractice/5X10/5X10-2.csv"
