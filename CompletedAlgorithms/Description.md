@@ -1,3 +1,3 @@
 ## **Description**
 
-- Finished Algorithms
+Finished Algorithms
