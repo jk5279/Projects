@@ -5,10 +5,10 @@ import csv
 # file_path = "/content/drive/MyDrive/SchedulingPractice/5X10/5X10-2.csv"
 # file_path = "/content/drive/MyDrive/SchedulingPractice/maxmindatafile.csv"
 # file_path = "C:/Users/김종은/Desktop/스케쥴링/maxmindatafile.csv"
-# file_path = "C:/Users/user/Desktop/종은/dataset/dataset/m=10/n=400/400x10-5.csv"
 # file_path = "C:/Users/user/Desktop/종은/maxmindatafile.csv"
 
-file_path = "C:/Users/user/Desktop/종은/dataset/dataset/smalldata/m=5/5x20-2.csv"
+# file_path = "C:/Users/user/Desktop/종은/dataset/dataset/smalldata/n=50/8x50-5.csv"
+file_path = "C:/Users/user/Desktop/종은/dataset/dataset/m=10/n=400/400x10-5.csv"
 
 
 task_list = list()
@@ -73,7 +73,6 @@ rj_list[makespan_machine_task_list[0][0]][1] = makespan_machine_idx
 rj_list[makespan_machine_task_list[0][0]][2] = Eij_list[makespan_machine_task_list[0][0]][makespan_machine_idx]
 
 makespan_list.append(makespan)
-temp_rj_list = [rj_list]
 
 while makespan_list[-1] != makespan_list[-2] or makespan_list[-2] != makespan_list[-3] and makespan_list[-1] <= makespan_list[-2]:
     temp_makespan_list.clear()
@@ -88,7 +87,6 @@ while makespan_list[-1] != makespan_list[-2] or makespan_list[-2] != makespan_li
     rj_list[makespan_machine_task_list[0][0]][2] = Eij_list[makespan_machine_task_list[0][0]][makespan_machine_idx]
 
     makespan_list.append(makespan)
-    temp_rj_list.append(rj_list)
 
 
 print("task_list:", task_list)
@@ -125,8 +123,7 @@ def get_scheduler_list(rj_list, m):
     return scheduler_list
 
 scheduler_list = list(get_scheduler_list(rj_list, m))
-
 with open("C:/Users/user/Desktop/종은/scheduler_file.csv", 'w', newline="") as file:
     write = csv.writer(file)
-    write.writerow(str(m))
+    write.writerow([m,n])
     write.writerows(scheduler_list)
