@@ -6,7 +6,13 @@ Using Python as primary language.
 Using Google Colab, Pycharm for code dev.
 
 
-### Current (2021.08.09)
+### Current (2021.08.11)
+
+- Finished code review for using DNN for scheduling
+- Thinking of using a different base for MIN-CCA method such as HASA-CCA, ACTA-CCA, etc -> unfeasible solution
+- Doing a study on using RL for scheduling
+
+### Past (2021.08.09)
 
 - Finished MIN+CCA code 
 - Thinking of using a different base for MIN-CCA method such as HASA-CCA, ACTA-CCA, etc.
@@ -14,7 +20,7 @@ Using Google Colab, Pycharm for code dev.
 - Thinking of acquiring optimal scheduling data for training data for ML methods
 - Doing research on other feasible solutions for optimization of multiprocessor scheduling
 
-### Past (2021.08.06)
+### (2021.08.06)
 
 - Completed scheduling code for major rule-based heuristics
 
