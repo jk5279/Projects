@@ -1,17 +1,20 @@
 ## Scheduling Projects
-This is a repository for projects related to scheduling.
+This is a repository for projects related to job scheduling.
 
 Using Python as primary language.
 
 Using Google Colab, Pycharm for code dev.
 
 
-### Current (2022.02.08)
+### Current (2022.07.04)
+- Doing Research on Rule-Based Heuristics for minimization of makespan on Multiprocessor Scheduling Problems
+
+### Past (2022.02.08)
 
 - Update: Finished implementing codes for major rule-based scheduling methods.
 - Trying to implement scheduling using machine learning methods.
 
-### Past (2021.08.11)
+### (2021.08.11)
 
 - Finished code review for using DNN for scheduling
 - Thinking of using a different base for MIN-CCA method such as HASA-CCA, ACTA-CCA, etc -> unfeasible solution
