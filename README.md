@@ -1,7 +1,7 @@
 ## Scheduling Projects
 This is a repository for projects related to job scheduling using Heuristics, planning to expand using ML methods for scheduling.
 
-Using Python as primary language.
+Using Python as the primary language.
 
 Using Google Colab, Pycharm for code dev.
 
