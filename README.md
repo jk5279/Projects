@@ -1,5 +1,5 @@
 ## Scheduling Projects
-This is a repository for projects related to job scheduling.
+This is a repository for projects related to job scheduling using Heuristics, planning to expand using ML methods for scheduling.
 
 Using Python as primary language.
 
